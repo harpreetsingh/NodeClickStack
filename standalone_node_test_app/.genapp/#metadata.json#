@@ -1,0 +1,11 @@
+{
+  "app": {
+    "plugins": [
+      {
+	  "name": "simple_http",
+	  "src": "local_plugin:///Users/harpreet/clickstacks/genapp/examples/simple_http/"
+
+      }
+    ]
+  }
+}

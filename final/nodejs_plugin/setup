@@ -1,0 +1,24 @@
+#!/bin/bash -eu
+
+set +x
+
+install_app() {
+	      cp -R $pkg_dir/* $app_dir
+}
+
+install_node(){
+	cd $app_dir/
+	tar xfz $plugin_dir/node.tar.gz
+}
+
+# create start script
+create_start_script(){
+	node_bin=$app_dir/node-v0.10.12-linux-x64/bin/node
+	echo "#!/bin/bash" > $control_dir/start
+	echo "exec $node_bin $app_dir/server.js $app_port" >> $control_dir/start
+	chmod 755 $control_dir/start
+}
+
+install_app
+install_node
+create_start_script

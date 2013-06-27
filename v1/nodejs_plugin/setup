@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+set -u
+
+# Install everything from pkg_dir
+cp -a $pkg_dir/ $app_dir/
+
+# Create a start script that runs Python's SimpleHTTPServer (this will
+# serve the directory contents over HTTP on $app_port)
+cat > "$control_dir/start" << EOF
+#!/bin/sh
+cd $app_dir
+exec node server.js $app_port
+EOF
+
+# start must be executable
+chmod 755 "$control_dir/start"

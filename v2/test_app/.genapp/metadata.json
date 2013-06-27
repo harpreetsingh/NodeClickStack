@@ -1,0 +1,10 @@
+{
+  "app": {
+    "plugins": [
+      {
+	  "name": "nodejs_plugin",
+	  "src": "local_plugin:///Users/harpreet/genapp/v2/nodejs_plugin/"
+      }
+    ]
+  }
+}
