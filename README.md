@@ -12,16 +12,16 @@ Clone the Genapp utility and install it as per requirements (needs Erlang, Curl 
 Modify devmode to true and specify where the apps will be deployed on a local instance (/Users/harpreet/genapp/apps) for all examples checked in here. Replace with your own directory.
 
     %%% -*-erlang-*-
-[{genapp,
-  [
-   {devmode, true},
-   {apps_home, "/Users/harpreet/genapp/apps"}
-]}].
+    [{genapp,
+    [
+        {devmode, true},
+        {apps_home, "/Users/harpreet/genapp/apps"}
+    ]}].
 
     cd $GENAPP_SRC
-	make 
-	make shell             //starts the shell - the local environment
-	genapp:query_apps([]). // Queries the local environment. The trailing period is important.
+    make 
+    make shell             //starts the shell - the local environment
+    genapp:query_apps([]). // Queries the local environment. The trailing period is important.
 	
 ## Optional
 View a list of ClickStacks on the [CloudBees community page](https://github.com/CloudBees-community/)
